@@ -1,0 +1,40 @@
+{% extends 'home/header.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="container">
+       <table id="tabla">
+            <thead>
+              <tr>
+                  <th>Materia</th>
+                  <th>Catedra</th>
+                  <th>Dias</th>
+                  <th>Horario</th>
+                  <th>Comision</th>
+                  <th>Departamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in Catedra %}
+                 <tr>
+                     <td>{{i.catedra_materia}}</td>
+
+                     <td>{{i.catedra_nombre}}</td>
+
+                     <td>{{i.catedra_dias}}</td>
+
+                     <td>{{i.catedra_horario}}</td>
+
+                     <td>{{i.catedra_comision}}</td>
+
+                     <td>{{i.catedra_depto}}</td>
+                 </tr>
+              {% endfor %}
+            </tbody>
+      </table>
+    </div>
+
+    <script src="{% static 'js/datatable.js' %}"> </script>
+{% endblock %}
